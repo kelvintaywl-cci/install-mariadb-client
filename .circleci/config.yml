@@ -1,0 +1,12 @@
+version: 2.1
+
+jobs:
+  build:
+    resource_class: small
+    docker:
+      - image: circleci/php:8.0-node-browsers-legacy
+    steps:
+      - run:
+          name: install MariaDB client
+          command: |
+            sudo apt install mariadb-client
